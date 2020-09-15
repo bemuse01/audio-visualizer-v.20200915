@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <script src="vue.min.js"></script>
         <script src="js/lib/vue-three-visualizer-v.20200915/js/param.js"></script>
+        <script src="js/lib/vue-three-visualizer-v.20200915/js/main.init.js"></script>
         <script src="js/lib/vue-three-visualizer-v.20200915/js/main.create.js"></script>
         <script src="js/lib/vue-three-visualizer-v.20200915/js/main.method.js"></script>
         <!-- <script src="three.min.r118.js"></script>
@@ -22,12 +23,27 @@
 	<body>
     <div id="wrap">
         <div id="visualizer">
-            <div class="visualizer-line back-line"
-                v-for="i in element.visualizer.line.back"
-                :key="i.id"
-            >
-                <div :style="i.style.child1">
-                    <div :style="i.style.child2"></div>
+            <div id="visualizer-line-wrap">
+                <div id="back-line-wrap">
+                    <div class="visualizer-line back-line"
+                        v-for="i in element.visualizer.line.back"
+                        :key="i.id"
+                    >
+                        <div :style="i.style.child1">
+                            <div :style="i.style.child2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="front-line-wrap"> 
+                    <div class="visualizer-line front-line"
+                        v-for="i in element.visualizer.line.front"
+                        :key="i.id"
+                        :style="i.style.parent"
+                    >
+                        <div :style="i.style.child1">
+                            <div :style="i.style.child2"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
