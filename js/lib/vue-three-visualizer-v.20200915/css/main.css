@@ -31,8 +31,15 @@ div.visualizer-line{
     width: var(--visualizer-line-width);
 }
 /* visualizer back line */
+div#back-line-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(225deg);
+}
 div.back-line{
     height: var(--visualizer-back-line-height);
+    filter: blur(1.75px);
 }
 div.back-line > div{
     position: absolute;
@@ -51,6 +58,7 @@ div#front-line-wrap{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(225deg);
+    filter: brightness(1.25);
 }
 div.front-line{
     height: var(--visualizer-front-line-height);

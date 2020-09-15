@@ -7,21 +7,23 @@ const param = {
     backLine: {
         deg: 4.5,
         radius: 0.3875,
-        color: 290,
+        color: 200,
         step: 2,
         opacity: {
             top: 0,
             bottom: 0.4
-        }
+        },
+        position: 65
     },
     frontLine: {
         deg: 4.5,
         radius: 0.228,
         color: 200,
-        step: 1.8,
+        step: 2,
         opacity: {
             top: 1,
             bottom: 1
-        }
+        },
+        blur: 0
     }
 }

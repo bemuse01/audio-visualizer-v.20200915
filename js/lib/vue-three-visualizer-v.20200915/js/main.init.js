@@ -10,7 +10,9 @@ const main_init = {
         src.connect(audio.analyser)
         audio.analyser.connect(context.destination)
         audio.analyser.fftSize = audio.fftSize
+        audio.analyser.smoothingTimeConstant = 0.7
         let bufferLength = audio.analyser.frequencyBinCount
         audio.dataArray = new Uint8Array(bufferLength)
+        audio.dataArrayIndex = util.createDataArrayIndex(Math.floor(360 / param.backLine.deg))
     }
 }

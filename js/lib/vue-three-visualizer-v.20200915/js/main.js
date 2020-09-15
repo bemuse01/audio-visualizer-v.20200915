@@ -11,11 +11,12 @@ new Vue({
                 }
             },
             audio: {
-                src: 'song/아델라(CV.장미) - Alive on live.mp3',
+                src: `song/Fate Stay Night Heaven's Feel - OST.mp3`,
                 song: null,
                 analyser: null,
                 dataArray: null,
-                fftSize: 2048
+                fftSize: 2048,
+                dataArrayIndex: []
             },
             three: {
 
@@ -54,8 +55,8 @@ new Vue({
 
         // visualizer
         updateLine(){
-            move.updateLineScale(this.element.visualizer.line.front, this.audio.dataArray)
-            move.updateLineOpacity(this.element.visualizer.line.back, this.audio.dataArray, param.backLine)
+            move.updateLineScale(this.element.visualizer.line.front, this.audio)
+            move.updateLineOpacity(this.element.visualizer.line.back, this.audio, param.backLine)
         },
 
 
