@@ -1,7 +1,8 @@
 :root{
-    --visualizer-line-width: calc(100vh * 10 / 1080);
-    --visualizer-line-border-radius: calc(100vh * 10 / 1080);
-    --visualizer-back-line-height: calc(100vh * 300 / 1080);
+    --visualizer-line-width: calc(100vh * 13 / 1080);
+    --visualizer-line-border-radius: calc(100vh * 5 / 1080);
+    --visualizer-back-line-height: calc(100vh * 400 / 1080);
+    --visualizer-front-line-height: calc(100vh * 19 / 1080);
 }
 
 
@@ -33,12 +34,36 @@ div.visualizer-line{
 div.back-line{
     height: var(--visualizer-back-line-height);
 }
-/* div.back-line > div{
-
-} */
+div.back-line > div{
+    position: absolute;
+    width: var(--visualizer-line-width);
+    height: var(--visualizer-back-line-height);
+}
 div.back-line > div > div{
     position: absolute;
     width: var(--visualizer-line-width);
     height: var(--visualizer-back-line-height);
     border-radius: var(--visualizer-line-border-radius);
+}
+/* visualizer front line */
+div#front-line-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(225deg);
+}
+div.front-line{
+    height: var(--visualizer-front-line-height);
+}
+div.front-line > div{
+    position: absolute;
+    width: var(--visualizer-line-width);
+    height: var(--visualizer-front-line-height);
+}
+div.front-line > div > div{
+    position: absolute;
+    width: var(--visualizer-line-width);
+    height: var(--visualizer-front-line-height);
+    border-radius: var(--visualizer-line-border-radius);
+    transform-origin: bottom;
 }
